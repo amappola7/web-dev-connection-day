@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { getProductsList } from '../../API/requests'
-import Header from '../Header/Header'
+import './Home.css'
 
 function Home() {
   const [products, setProducts] = useState([])
@@ -16,6 +16,7 @@ function Home() {
         return(
         <section
           key={product.id}
+          className='caja-producto'
         >
           <img src={product.images ? product.images[0] : ''} alt={product.title}/>
           <p>{product.title}</p>
@@ -28,9 +29,10 @@ function Home() {
   console.log('LISTA DE PRODUCTOS:\n', products)
   return (
     <div>
-      <Header>
-      </Header>
-      <section>
+        <header>
+            <h1>squash II</h1>
+        </header>
+      <section className='contenedor-productos'>
         {
           result
         }
